@@ -1,0 +1,91 @@
+<!-- fragment_example.xml -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="onClick"
+            type="android.view.View.OnClickListener" />
+
+
+        <variable
+            name="viewModel"
+            type="com.mbw.squarerepos.screen.example.viewmodel.SquareReposViewModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_5dp"
+        android:layout_marginVertical="@dimen/_20dp"
+        app:cardCornerRadius="@dimen/_10dp"
+
+        app:cardElevation="@dimen/_10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_20dp"
+            tools:context=".ui.ExampleFragment">
+
+
+            <TextView
+                android:id="@+id/textViewName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.selectedRepo.name}"
+                android:textAlignment="viewStart"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textStartCount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Example Name" />
+
+            <TextView
+                android:id="@+id/textAbout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.selectedRepo.description}"
+                android:textAlignment="viewStart"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="@dimen/_15sp"
+                android:layout_marginTop="@dimen/_5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textStartCount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewName"
+                tools:text="Example description" />
+            <TextView
+                android:id="@+id/textStartCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/baseline_star_border_24"
+                android:text="@{Integer.toString(viewModel.selectedRepo.stargazers_count)}"
+                android:textAlignment="viewStart"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="@dimen/_20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1" />
+
+
+            <Button
+                android:id="@+id/btnBookMark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_50dp"
+                android:text='@{viewModel.selectedRepo._bookmarked ? @string/remove_book_mark : @string/add_book_mark}'
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textAbout"
+                tools:text="Add to bookmark" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

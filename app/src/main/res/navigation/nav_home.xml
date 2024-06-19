@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/reposListFragment">
+
+    <fragment
+        android:id="@+id/reposListFragment"
+        android:name="com.mbw.squarerepos.screen.example.fragment.FragmentSquareRepos"
+        android:label="Square Repos"
+        tools:layout="@layout/fragment_square_repos">
+        <action
+            android:id="@+id/action_repoList_to_repoDetails"
+            app:destination="@id/repoDetails"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_in_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/repoDetails"
+        android:name="com.mbw.squarerepos.screen.example.fragment.FragmentSquareRepoDetail"
+        android:label="Repo Details"
+        tools:layout="@layout/fragment_square_repos_detail"
+        />
+</navigation>
