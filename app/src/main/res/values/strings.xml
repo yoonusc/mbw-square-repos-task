@@ -5,4 +5,5 @@
     <string name="data_fetching_filed">Data fetching filed</string>
     <string name="add_book_mark">Add to book mark</string>
     <string name="remove_book_mark">Remove book mark</string>
+    <string name="star">Star</string>
 </resources>
