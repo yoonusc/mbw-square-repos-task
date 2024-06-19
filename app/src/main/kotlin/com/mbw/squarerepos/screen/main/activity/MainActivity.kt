@@ -12,6 +12,25 @@ import com.mbw.squarerepos.base.activity.BaseActivity
 import com.mbw.squarerepos.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * MainActivity is the primary activity for the SquareRepos application.
+ * This activity sets up the main navigation host fragment and configures the app's navigation components.
+ * It extends from BaseActivity, utilizing ActivityMainBinding for view binding.
+ *
+ * The class is annotated with @AndroidEntryPoint to integrate with Dagger-Hilt for dependency injection.
+ *
+ * The appBarConfiguration is used to manage navigation within the app, ensuring that the ActionBar is properly
+ * configured to handle navigation actions.
+ *
+ * Key functionalities include:
+ * - Setting the window to not fit system windows, allowing for edge-to-edge content display.
+ * - Finding the NavHostFragment and setting up the NavController for navigation.
+ * - Configuring the ActionBar with the NavController and AppBarConfiguration.
+ * - Overriding onSupportNavigateUp to handle navigation when the up button is pressed in the ActionBar.
+ *
+ * The activity_main layout resource file is used to define the UI layout for this activity.
+ */
+
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
