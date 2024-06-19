@@ -38,6 +38,9 @@ interface SquareReposDao {
     @Query("DELETE FROM square_repos_table")
     suspend fun clearAllPosts()
 
+    /**
+     * update SquareReposEntity
+     */
     @Update
     suspend fun update(data: SquareReposEntity)
 }

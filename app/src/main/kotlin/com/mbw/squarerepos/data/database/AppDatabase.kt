@@ -20,7 +20,7 @@ import com.mbw.squarerepos.data.model.square.SquareReposEntity
 @TypeConverters(TopicsConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     /**
-     * Returns an instance of the ExampleDao for performing database operations.
+     * Returns an instance of the SquareReposDao for performing database operations.
      *
      * @return SquareReposDao
      */

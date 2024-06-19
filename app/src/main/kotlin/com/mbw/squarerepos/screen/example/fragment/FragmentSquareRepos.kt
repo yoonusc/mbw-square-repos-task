@@ -20,14 +20,14 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 /**
- * A Fragment class for displaying Example data.
+ * A Fragment class for displaying Square github repos  data.
  * This class extends [BaseFragment] with [FragmentSquareReposBinding] for view binding.
  */
 @AndroidEntryPoint
 class FragmentSquareRepos :
     BaseFragment<FragmentSquareReposBinding>(R.layout.fragment_square_repos) {
 
-    /** ViewModel instance for the Example screen. */
+    /** ViewModel instance for the FragmentSquareRepos screen. */
     private val repoViewModel: SquareReposViewModel by activityViewModels()
 
     /** Paging adapter instance for handling paged data. */
@@ -71,7 +71,9 @@ class FragmentSquareRepos :
             }
         }
 
-
+        /**
+         * show error messages to user when api return error
+         */
         squareReposPagingAdapter.addLoadStateListener { loadState ->
             val mediatorLoadState: LoadState? = loadState.mediator?.refresh
             if (mediatorLoadState is LoadState.Error) {

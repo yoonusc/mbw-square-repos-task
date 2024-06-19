@@ -7,7 +7,9 @@ import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.mbw.squarerepos.data.dataconvertor.TopicsConverter
 
-
+/**
+ * Data class for hold  SquareRepos data.
+ */
 @Entity(tableName = "square_repos_table")
 data class SquareReposEntity(
     @PrimaryKey val id: Int,
